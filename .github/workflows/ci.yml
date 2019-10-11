@@ -1,0 +1,21 @@
+name: CI
+
+on: [push, pull_request]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install LuaRocks
+        run: sudo apt update && sudo apt install -y luarocks
+      - name: Install luacheck
+        run: sudo luarocks install luacheck
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run luacheck
+        run: luacheck *.lua

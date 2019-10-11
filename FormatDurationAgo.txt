@@ -1,0 +1,12 @@
+## Title: FormatDurationAgo
+## Author: Surilindur
+## APIVersion: 101044
+## AddOnVersion: 3
+## Version: 3
+## IsLibrary: false
+## DependsOn: LibAddonMenu-2.0>=30 LibDebugLogger>=180
+## SavedVariables: FormatDurationAgoSavedVariables
+## Description: Custom formats for timestamp display
+
+FormatDurationAgo.lua
+FormatDurationAgoMenu.lua
